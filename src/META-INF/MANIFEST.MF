@@ -1,0 +1,4 @@
+Manifest-Version: 0.1 SNAPSHOT
+Created-By: Sky64Redstone
+Main-Class: de.Main
+Name: Base
