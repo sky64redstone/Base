@@ -3,7 +3,6 @@ package de.base.awt.geom;
 import de.base.math.Tuple3d;
 
 /**
- * Plane == Ebene
  * @see de.base.math.Maths3D
  */
 public class Plane {
