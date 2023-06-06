@@ -25,6 +25,12 @@ public class Maths3D {
         return getDrawP(projP.x, projP.y, projP.z, w1, w2);
     }
 
+    public static @NotNull Tuple2d getDrawP(double x, double y, double z, @NotNull Tuple3d w1, @NotNull Tuple3d w2) {
+        double DrawX = w2.x * x + w2.y * y + w2.z * z;
+        double DrawY = w1.x * x + w1.y * y + w1.z * z;
+        return new Tuple2d(DrawX, DrawY);
+    }
+
     public static @NotNull Tuple3d getProj(@NotNull Tuple3d pos, Tuple3d viewTo, double x, double y, double z, @NotNull Plane P) {
         Tuple3d ViewToPoint = new Tuple3d(x - pos.x, y - pos.y, z - pos.z);
 
@@ -35,12 +41,6 @@ public class Maths3D {
         z = pos.z + ViewToPoint.z * t;
 
         return new Tuple3d(x, y, z);
-    }
-
-    public static @NotNull Tuple2d getDrawP(double x, double y, double z, @NotNull Tuple3d w1, @NotNull Tuple3d w2) {
-        double DrawX = w2.x * x + w2.y * y + w2.z * z;
-        double DrawY = w1.x * x + w1.y * y + w1.z * z;
-        return new Tuple2d(DrawX, DrawY);
     }
 
     public static void getPrederterminedInfo(@NotNull Tuple3d pos, @NotNull Tuple3d viewTo, double zoom) {
