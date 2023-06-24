@@ -1,4 +1,4 @@
-package de.base.utils;
+package com.omnom.graphics;
 
 import org.jetbrains.annotations.NotNull;
 

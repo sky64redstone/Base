@@ -81,4 +81,12 @@ public class Picture {
         }
     }
 
+    public static BufferedImage clippXY(BufferedImage image, int width, int height) {
+        if (width < height) {
+            int imageWidth = height * width / height;
+            return image.getSubimage(image.getWidth() - imageWidth, 0, imageWidth, image.getHeight());
+        }
+        int imageHeight = width * height / width;
+        return image.getSubimage(0, image.getHeight() - imageHeight, image.getWidth(), imageHeight);
+    }
 }
