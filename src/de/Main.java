@@ -1,33 +1,33 @@
 package de;
 
-import de.base.awt.Colors;
-import de.base.awt.RunnableCanvas;
-import de.base.swing.ConfigurableGui;
+import de.base.awt.RunnableFrame;
 
-import org.jetbrains.annotations.NotNull;
+import java.awt.*;
 
-import javax.swing.*;
-import java.awt.Graphics;
-
-public class Main extends RunnableCanvas<JPanel> {
+public class Main extends RunnableFrame {
 
     public static void main(String[] args) {
-        ConfigurableGui.createFullScreen(new Main());
+        new Main();
     }
 
-    @Override
-    public void paint(@NotNull Graphics g) {
-        g.setColor(Colors.darker_gray);
-        this.fillBackground(g);
-    }
-
-    @Override
-    protected void tick() {
-        this.update();
+    public Main() {
+        super("Test-Frame", new Dimension(1000, 750), 60);
+        start();
+        setBackground(Color.DARK_GRAY);
     }
 
     @Override
     protected void init() {
-        super.init();
+
+    }
+
+    @Override
+    protected void tick() {
+
+    }
+
+    @Override
+    protected void render() {
+
     }
 }
