@@ -22,7 +22,7 @@ public class Main extends RunnableFrame {
     }
 
     @Override
-    protected void tick() {
+    protected void tick(double timeElapsed) {
 
     }
 

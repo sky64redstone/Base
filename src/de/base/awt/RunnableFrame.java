@@ -100,7 +100,7 @@ public abstract class RunnableFrame extends Frame implements Runnable {
 
             while (delta >= 1) {
                 render();
-                tick();
+                tick(delta);
                 delta--;
             }
 
@@ -123,7 +123,7 @@ public abstract class RunnableFrame extends Frame implements Runnable {
 
     protected abstract void init();
 
-    protected abstract void tick();
+    protected abstract void tick(double timeElapsed);
 
     protected abstract void render();
 
