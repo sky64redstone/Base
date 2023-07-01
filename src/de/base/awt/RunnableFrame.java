@@ -2,9 +2,25 @@ package de.base.awt;
 
 import java.awt.*;
 import java.awt.event.FocusEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
+import java.util.Objects;
 
 public abstract class RunnableFrame extends Frame implements Runnable {
+    private final WindowAdapter windowAdapter = new WindowAdapter() {
+        @Override
+        public void windowClosing(WindowEvent e) {
+            Objects.requireNonNull(e);
+            Window w = e.getWindow();
+            if (w instanceof RunnableFrame frame) {
+                frame.stop();
+                return;
+            }
+            System.exit(130);
+        }
+    };
+
     private final int FPS;
     private Thread thread;
     private boolean running;
